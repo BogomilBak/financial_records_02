@@ -7,6 +7,7 @@ class CategorySerializer(serializers.ModelSerializer):
     parent_id = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all(),
         write_only=True,
+        required=False,
         allow_null=True,
         source='parent'
     )
